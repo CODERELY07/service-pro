@@ -1,0 +1,192 @@
+[23-Mar-2026 11:42:46 Europe/Berlin] PHP Fatal error:  Uncaught chillerlan\QRCode\QRCodeException: ext-gd not loaded in C:\xampp\htdocs\PHP\service-pro\vendor\chillerlan\php-qrcode\src\Output\QRImage.php:63
+Stack trace:
+#0 C:\xampp\htdocs\PHP\service-pro\vendor\chillerlan\php-qrcode\src\QRCode.php(250): chillerlan\QRCode\Output\QRImage->__construct(Object(chillerlan\QRCode\QROptions), Object(chillerlan\QRCode\Data\QRMatrix))
+#1 C:\xampp\htdocs\PHP\service-pro\vendor\chillerlan\php-qrcode\src\QRCode.php(180): chillerlan\QRCode\QRCode->initOutputInterface('ServicePro Trac...')
+#2 C:\xampp\htdocs\PHP\service-pro\actions\booking_process.php(42): chillerlan\QRCode\QRCode->render('ServicePro Trac...', 'C:\\xampp\\htdocs...')
+#3 {main}
+  thrown in C:\xampp\htdocs\PHP\service-pro\vendor\chillerlan\php-qrcode\src\Output\QRImage.php on line 63
+[23-Mar-2026 11:46:52 Europe/Berlin] Email could not be sent. Mailer Error: SMTP Error: Could not authenticate.
+[23-Mar-2026 11:46:57 Europe/Berlin] Email could not be sent. Mailer Error: SMTP Error: Could not authenticate.
+[23-Mar-2026 11:47:01 Europe/Berlin] Email could not be sent. Mailer Error: SMTP Error: Could not authenticate.
+[27-Mar-2026 03:21:24 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:24 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:25 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:25 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:28 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:28 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:28 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:28 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:36 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:36 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:36 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:36 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:43 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 03:21:43 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 04:25:18 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 04:25:18 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 04:25:20 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 04:25:20 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 52
+[27-Mar-2026 04:41:06 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:41:06 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:25 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:25 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:47 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:47 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:48 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:42:48 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:46:28 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 04:46:28 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PHP\service-pro\index.php on line 58
+[27-Mar-2026 05:50:40 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:50:40 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:51:27 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:51:27 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:52:12 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:52:12 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:54:00 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:54:00 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:54:51 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 05:54:51 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:15 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:15 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:16 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:16 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:52 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:52 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:53 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:53 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:53 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:01:53 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:00 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:00 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:01 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:01 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:28 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:28 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:28 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:02:28 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:05:01 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:05:01 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:05:13 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:05:13 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:07:48 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:07:48 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:07:49 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:07:49 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:08:36 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:08:36 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:09:38 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:09:38 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:18:59 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:18:59 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:19:04 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:19:04 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:03 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:03 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:19 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:19 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:31 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:20:31 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:09 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:09 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:38 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:38 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:40 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:40 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:45 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:21:45 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:22:21 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:22:21 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:22:58 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:22:58 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:32 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:32 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:33 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:33 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:34 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:23:34 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:10 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:10 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:11 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:11 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:11 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:11 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:36 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:36 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:36 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:36 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:38 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:39 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:39 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:27:39 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:39 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:41 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:41 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:49 Europe/Berlin] PHP Warning:  include(./components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:49 Europe/Berlin] PHP Warning:  include(): Failed opening './components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:49 Europe/Berlin] PHP Warning:  include(components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:49 Europe/Berlin] PHP Warning:  include(): Failed opening 'components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:56 Europe/Berlin] PHP Warning:  require_once(components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:27:56 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:05 Europe/Berlin] PHP Warning:  require(components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:05 Europe/Berlin] PHP Warning:  require(components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:05 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:36 Europe/Berlin] PHP Warning:  require(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './../components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:36 Europe/Berlin] PHP Warning:  require(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:36 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './../components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Warning:  require(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './../components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Warning:  require(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './../components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Warning:  require(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:37 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required './../components/logo.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php:7
+Stack trace:
+#0 C:\xampp\htdocs\service-pro\login.php(5): require_once()
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:43 Europe/Berlin] PHP Warning:  include(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:43 Europe/Berlin] PHP Warning:  include(): Failed opening './../components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:44 Europe/Berlin] PHP Warning:  include(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:44 Europe/Berlin] PHP Warning:  include(): Failed opening './../components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:44 Europe/Berlin] PHP Warning:  include(./../components/logo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:28:44 Europe/Berlin] PHP Warning:  include(): Failed opening './../components/logo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\includes\forms\login.php on line 7
+[27-Mar-2026 06:29:33 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:29:33 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:30:51 Europe/Berlin] PHP Warning:  include(./includes/modals/sections/service-features.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\service-pro\index.php on line 57
+[27-Mar-2026 06:30:51 Europe/Berlin] PHP Warning:  include(): Failed opening './includes/modals/sections/service-features.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\service-pro\index.php on line 57
