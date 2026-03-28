@@ -1,9 +1,11 @@
 <?php 
-    include_once 'config/functions.php';
-    add_script('./assets/js/signup.js'); 
-    require 'includes/header.php'; 
-    require 'includes/navbar.php'; 
+    require_once __DIR__ . '/config/functions.php';
+
+    add_script('assets/js/auth.js'); 
+    require_once BASE_PATH . 'includes/header.php'; 
+    require_once BASE_PATH . 'includes/navbar.php'; 
 ?>
+
 <div class="min-h-[85vh] flex items-center justify-center px-4">
     <div class="bg-white p-8 rounded-3xl shadow-2xl shadow-slate-200 w-full max-w-md border border-slate-100">
         <div class="text-center mb-8">
@@ -11,6 +13,7 @@
             <p class="text-slate-500 mt-2">Join ServicePro to track your repairs.</p>
         </div>
         <div id="responseMessage" class="hidden p-4 rounded-xl text-sm mb-6 font-medium border"></div>
+        
         <form id="signupForm" class="space-y-5">
             <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Username</label>
@@ -18,7 +21,7 @@
             </div>
              <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Email</label>
-                <input type="text" name="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" placeholder="Choose a email" required>
+                <input type="email" name="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" placeholder="Choose an email" required>
             </div>
             <div>
                 <label class="block text-sm font-semibold text-slate-700 mb-2">Password</label>
@@ -39,4 +42,4 @@
             <a href="index.php" class="text-blue-600 font-bold hover:underline">Sign In</a>
         </p>
     </div>
-</div>  
+</div>

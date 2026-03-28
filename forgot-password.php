@@ -1,32 +1,36 @@
 <?php
-include './includes/header.php';
+    require_once __DIR__ . '/config/functions.php';
+    add_script('assets/js/auth.js'); 
 
-// Get the current step from URL, default to 1
-$step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
+    include BASE_PATH . 'includes/header.php';
 
-// Security: If user tries to skip to Step 2 or 3 without a session, kick them back
-if ($step > 1 && !isset($_SESSION['reset_email'])) {
-    header("Location: forgot-password.php?step=1");
-    exit();
-}
+    $step = isset($_GET['step']) ? (int)$_GET['step'] : 1;
+
+    if ($step > 1 && !isset($_SESSION['reset_email'])) {
+        header("Location: forgot-password.php?step=1");
+        exit();
+    }
+
+    if(($step === 1 || $step === 3) && isset($_SESSION['email_sent'])){
+        header("Location: forgot-password.php?step=2");
+        exit();
+    }
+
+    if(($step === 1 || $step === 2) && isset($_SESSION['resetting_password'])){
+        header("Location: forgot-password.php?step=3");
+        exit();
+    }
+
 ?>
-
 <div class="flex items-center justify-center min-h-[80vh] px-4">
     <div class="max-w-md w-full bg-white rounded-3xl shadow-xl p-8 border border-gray-100">
         
         <div class="text-center mb-8">
             <h2 class="text-2xl font-bold text-gray-900">Reset Password</h2>
-            <p class="text-gray-500 text-sm mt-2">
-                <?php 
-                    if($step == 1) echo "Enter your email to get a verification code.";
-                    if($step == 2) echo "We sent a 6-digit code to <br><b class='text-indigo-600'>".htmlspecialchars($_SESSION['reset_email'])."</b>";
-                    if($step == 3) echo "Create a new secure password for your account.";
-                ?>
-            </p>
         </div>
 
-        <form method="POST" action="actions/reset_password_process.php?step=<?php echo $step; ?>" class="space-y-6">
-            
+        <form id="forgotPassword" data-step="<?= $step ?>" class="space-y-6">
+            <div id="responseMessage" class="hidden p-4 rounded-xl text-sm mb-6 font-medium border"></div>
             <?php if ($step == 1): ?>
                 <div>
                     <label class="block text-xs font-semibold uppercase tracking-wider text-gray-400 mb-1">Email Address</label>
@@ -47,7 +51,7 @@ if ($step > 1 && !isset($_SESSION['reset_email'])) {
                     Verify Code
                 </button>
                 <div class="text-center">
-                    <a href="process-reset.php?resend=1" class="text-xs text-indigo-600 hover:underline">Resend Code?</a>
+                    <a href="#" class="text-xs text-indigo-600 hover:underline">Resend Code?</a>
                 </div>
 
             <?php elseif ($step == 3): ?>
@@ -71,7 +75,7 @@ if ($step > 1 && !isset($_SESSION['reset_email'])) {
         </form>
 
         <div class="mt-8 text-center">
-            <a href="login.php" class="text-sm text-gray-400 hover:text-indigo-600 transition-colors">Return to Login</a>
+            <a href=<?= BASE_URL . "login.php"?> class="text-sm text-gray-400 hover:text-indigo-600 transition-colors">Return to Login</a>
         </div>
     </div>
 </div>

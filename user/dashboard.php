@@ -1,16 +1,19 @@
 <?php 
-    require './../includes/header.php'; 
-    require './../includes/navbar.php';
+  
+    require_once __DIR__ . '/../config/functions.php'; 
 
+    require_once BASE_PATH . 'config/db.php';
+    require_once BASE_PATH . 'includes/header.php'; 
+    require_once BASE_PATH . 'includes/navbar.php';
+
+    
     if (!isset($_SESSION['user_id'])) {
-        header("Location: index.php");
+        header("Location: " . BASE_URL . "index.php");
         exit();
     }
-
-    require __DIR__ . '../../config/db.php';
 ?>
 
-<?php include __DIR__ . '/../includes/modals/booking.php'; ?>
+<?php include BASE_PATH . 'includes/modals/booking.php'; ?>
 
 <main class="container mx-auto px-6 py-12">
     <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
@@ -62,6 +65,6 @@
     </div>
 </main>
 
-<script src="./../assets/js/modal.js"></script>
-<script src="./../assets/js/booking.js"></script>
-<script src="./../assets/js/dashboard.js"></script>
+<script src="<?= BASE_URL ?>assets/js/modal.js"></script>
+<script src="<?= BASE_URL ?>assets/js/booking.js"></script>
+<script src="<?= BASE_URL ?>assets/js/dashboard.js"></script>

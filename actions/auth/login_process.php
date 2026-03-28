@@ -1,23 +1,23 @@
 <?php
+    declare(strict_types=1);
+    header("Content-Type: application/json");
     session_start();
-    require_once './../config/db.php';
+    require_once __DIR__ . '/../../config/functions.php';
+    require_once BASE_PATH . 'config/db.php';
 
-    // if(isset($_SESSION['username'])){
-    //     header("Location: index.php");
-    // }
-
+    
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $email = trim($_POST['email']);
         $password = $_POST['password'];
         $remember_me = isset($_POST['remember_me']);
 
-
-        // die(var_dump($email, $password));
         $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
         $stmt->execute([$email]);
         $user = $stmt->fetch();
 
+        $response = ["status" => "error", "message" => "something went wrong!", "redirectTo" => "/"];
 
+        // error_log("LOGIN_PROCESS_ERROR: " . $e->getMessage() . " in " . $e->getFile() . " on line " . $e->getLine());
         if ($user && password_verify($password, $user['password'])) {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['username'] = $user['username'];
@@ -26,7 +26,7 @@
             if($remember_me){
                 $selector = bin2hex(random_bytes(12));
                 $validator = bin2hex(random_bytes(32)); 
-                $expiry = date('Y-m-d H:i:s', time() + 86400 * 30); // 30 days
+                $expiry = date('Y-m-d H:i:s', time() + 86400 * 30); 
 
                 $hashedValidator = password_hash($validator, PASSWORD_DEFAULT);
 
@@ -37,18 +37,21 @@
                     'remember_me',$selector . ':' . $validator,time() + 86400 * 30,
                     '/','', true, true
                 );
+              
             }
 
-            // die(var_dump($_SESSION));
             if($_SESSION['role'] === 'admin'){
-                header("Location: ./../admin/dashboard.php");
+                $response['redirectTo'] = "/admin/dashboard.php";
             }else{
-                header("Location: ./../");
+                $response['redirectTo'] = "/";
             }
-          
-            // exit();
+            $response['message'] = "Login Successfully!";
+            $response['status'] = "success";
         } else {
-           echo "Invalid credentials";
+           $response['message'] = "Invalid credentials";
         }
     }
+
+    echo json_encode($response);
+    exit();
 ?>

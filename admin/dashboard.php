@@ -1,8 +1,12 @@
 <?php
 
-    require __DIR__ . '/../config/db.php';
-    require '../includes/header.php';
-    require '../includes/navbar.php';
+    require_once __DIR__ . '/../config/functions.php';
+
+   require_once BASE_PATH . 'config/db.php';
+    require_once BASE_PATH . 'includes/header.php';
+    require_once BASE_PATH . 'includes/navbar.php';
+
+    
      if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
         header("Location: ../index.php");
         exit();

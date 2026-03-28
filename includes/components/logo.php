@@ -1,2 +1,2 @@
-<a href="<?php echo isset($_SESSION['user_id']) ? ($_SESSION['role'] === 'admin' ? 'dashboard.php' : 'dashboard.php') : 'index.php'; ?>" class="text-xl font-bold tracking-tight text-blue-600">Service<span class="text-slate-900">Pro</span></a>
+<a href="<?php echo isset($_SESSION['user_id']) ? ($_SESSION['role'] === 'admin' ? 'dashboard.php' : 'index.php') : 'index.php'; ?>" class="text-xl font-bold tracking-tight text-blue-600">Service<span class="text-slate-900">Pro</span></a>
         

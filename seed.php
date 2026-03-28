@@ -1,6 +1,10 @@
 <?php
 
-require_once __DIR__ . '/config/db.php';
+require_once __DIR__ . '/config/functions.php';
+
+require_once BASE_PATH . 'config/db.php';
+
+
 
 function seedAdmin($pdo, $username = 'admin', $email = 'admin@servicepro.com', $password = 'admin123') {
     $stmt = $pdo->prepare('SELECT id FROM users WHERE email = ? OR username = ?');
@@ -41,7 +45,6 @@ function seedClient($pdo, $username = 'client', $email = 'client@servicepro.com'
 }
 
 function seedBooking($pdo, $userId, $category, $model, $description, $status = 'Pending') {
-    // avoid duplicating same booking for same user and model text
     $stmt = $pdo->prepare('SELECT id FROM bookings WHERE user_id = ? AND category = ? AND model = ? AND description = ? LIMIT 1');
     $stmt->execute([$userId, $category, $model, $description]);
     if ($stmt->fetch(PDO::FETCH_ASSOC)) {
@@ -53,7 +56,6 @@ function seedBooking($pdo, $userId, $category, $model, $description, $status = '
     $max = $stmt->fetch(PDO::FETCH_ASSOC)['max_id'];
     $trackingId = $max + 1;
 
-    // make QR path pattern; actual file creation optional here
     $qrCodePath = "assets/qr_codes/qr_{$trackingId}.png";
 
     $stmt = $pdo->prepare('INSERT INTO bookings (user_id, tracking_id, description, model, category, qr_code_path, status) VALUES (?, ?, ?, ?, ?, ?, ?)');

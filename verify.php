@@ -1,9 +1,10 @@
 <?php
-require 'config/db.php';
+
+require_once __DIR__ . '/config/functions.php';
+require_once BASE_PATH . 'config/db.php';
 
 $status = 'loading';
 $message = '';
-$projectPath = str_replace(basename($_SERVER['PHP_SELF']), '', $_SERVER['PHP_SELF']);
 
 if (isset($_GET['code'])) {
     $verification_code = $_GET['code'];
@@ -23,11 +24,11 @@ if (isset($_GET['code'])) {
         $message = "Invalid or expired verification code.";
     }
 } else {
-    header("Location: index.php");
+    header("Location: " . BASE_URL . "index.php");
     exit;
 }
 
-include 'includes/header.php'; 
+require_once BASE_PATH . 'includes/header.php'; 
 ?>
 
 <main class="min-h-screen flex items-center justify-center bg-slate-50 px-4">
@@ -40,7 +41,7 @@ include 'includes/header.php';
             <h2 class="text-3xl font-bold text-slate-900 mb-2">Verified!</h2>
             <p class="text-slate-500 mb-8"><?= $message ?></p>
             
-            <a href="<?= $projectPath ?>login.php" 
+            <a href="<?= BASE_URL ?>login.php" 
                class="inline-block w-full bg-blue-600 text-white py-4 rounded-xl font-bold hover:bg-blue-700 shadow-lg shadow-blue-100 transition-all">
                 Go to Login Now
             </a>
@@ -52,7 +53,7 @@ include 'includes/header.php';
             <h2 class="text-3xl font-bold text-slate-900 mb-2">Oops!</h2>
             <p class="text-slate-500 mb-8"><?= $message ?></p>
             
-            <a href="<?= $projectPath ?>index.php" 
+            <a href="<?= BASE_URL ?>index.php" 
                class="inline-block w-full bg-slate-900 text-white py-4 rounded-xl font-bold hover:bg-black transition-all">
                 Back to Home
             </a>
@@ -63,12 +64,8 @@ include 'includes/header.php';
 
 <?php if ($status === 'success'): ?>
 <script>
-    // JS Redirect after 5 seconds
     setTimeout(() => {
-        const path = "<?= $projectPath ?>login.php";
-        console.log("Redirecting to:", path);
-        window.location.href = path;
+        window.location.href = "<?= BASE_URL ?>login.php";
     }, 5000);
 </script>
 <?php endif; ?>
-

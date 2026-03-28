@@ -1,12 +1,5 @@
 <?php
-// Disable displaying errors to the user/browser
-ini_set('display_errors', 0);
-
-// Enable error logging
-ini_set('log_errors', 1);
-
-// Set the path where the log file will be saved
-ini_set('error_log', __DIR__ . '/php-error.log');
+    require_once 'config.php';
 
     $host = '127.0.0.1';
     $port = '3307';

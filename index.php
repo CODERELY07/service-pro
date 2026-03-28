@@ -1,13 +1,12 @@
 <?php
-    include_once 'config/functions.php';
+    require_once __DIR__ . '/config/functions.php';
+    
+    add_script('assets/js/modal.js'); 
+    add_script('assets/js/booking.js');
 
-    add_script('./assets/js/modal.js'); 
-    add_script('./assets/js/booking.js');
-
-    require_once 'includes/header.php';
-    require_once 'includes/navbar.php';
+    require_once BASE_PATH . 'includes/header.php';
+    require_once  BASE_PATH . 'includes/navbar.php';
 ?>
-
 <section class="bg-white py-20 px-6">
     <div class="container mx-auto flex flex-col md:flex-row items-center justify-around">
         <div class="md:w-1/2 mb-10 md:mb-0">
@@ -54,9 +53,11 @@
     </div>
 </section>
 
-<?php include './includes/modals/sections/service-features.php'?>
-<?php include './includes/modals/login.php'?>
-<?php include './includes/modals/booking.php'?>
+<?php
+    include  BASE_PATH . 'includes/modals/sections/service-features.php';
+    include  BASE_PATH . 'includes/modals/login.php';
+    include  BASE_PATH . 'includes/modals/booking.php';
+?>
 
 <div class="fixed inset-0 bg-black bg-opacity-40 hidden" id="loginModal-overlay"></div>
 <div class="fixed inset-0 bg-black bg-opacity-40 hidden" id="bookingModal-overlay"></div>

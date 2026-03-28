@@ -1,13 +1,15 @@
 <?php
     header('Content-Type: application/json');
 
-    require './../config/db.php';
+    require_once __DIR__ . '/../../config/functions.php';
+    require_once BASE_PATH . 'config/db.php';
 
     use PHPMailer\PHPMailer\PHPMailer;
     use PHPMailer\PHPMailer\SMTP;
     use PHPMailer\PHPMailer\Exception;
 
-    require './../vendor/autoload.php';
+    require_once BASE_PATH . 'vendor/autoload.php';
+
 
     $response = ['status' => 'error' , 'message' => 'something went wrong!', 'redirectTo' => '/'];
 
