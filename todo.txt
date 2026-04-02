@@ -1,13 +1,6 @@
 
 Skip (do this after all features) - what if user is not verify but he/she logged in and resend code part in forgot password 
 
-Next tommorow
-Booking - fix database dataset 
-finish task 2
-
-
-important 
-as a senior dev we need to make path correct like use variable BASE Name use __DIR__ for booking,user and admin - auth done
-
-we need it so there's no errror or bug in deployment
-
+Next Later - 1 hour and 30 min
+Use Dry concept in booking finalize the code and filie structures 
+remove unuse functions make code readable and clean before commit

@@ -54,7 +54,7 @@
 </section>
 
 <?php
-    include  BASE_PATH . 'includes/modals/sections/service-features.php';
+    include  BASE_PATH . 'includes/sections/service-features.php';
     include  BASE_PATH . 'includes/modals/login.php';
     include  BASE_PATH . 'includes/modals/booking.php';
 ?>

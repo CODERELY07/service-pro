@@ -17,14 +17,21 @@
                     </button>
                     
                     <div id="userDropdown" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50 hidden">
-                        <?php if($_SESSION['role'] === 'admin'): ?>
-                            <a href="<?= BASE_URL ?>admin/dashboard.php" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900">
-                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                                </svg>
-                                Admin Dashboard
-                            </a>
-                        <?php else: ?>
+                     <?php if($_SESSION['role'] === 'admin'): ?>
+                        <a href="<?= BASE_URL ?>admin/dashboard.php" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-semibold">
+                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                            </svg>
+                            Admin Dashboard
+                        </a>
+
+                        <div class="border-t border-slate-100 my-1"></div>
+                        <div class="px-4 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Manage Bookings</div>
+                        
+                        <a href="<?= BASE_URL ?>admin/bookings.php?status=active" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Active Bookings</a>
+                        <a href="<?= BASE_URL ?>admin/bookings.php?status=completed" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Completed</a>
+                        <a href="<?= BASE_URL ?>admin/bookings.php?status=cancelled" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50">Cancelled</a>
+                    <?php else: ?>
                             <a href="<?= BASE_URL ?>user/dashboard.php" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900">
                                 <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>

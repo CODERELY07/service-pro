@@ -25,12 +25,21 @@
                     <option value="Appliance">Home Appliance</option>
                 </select>
             </div>
-            <div>
-                <label class="block text-sm font-semibold mb-2 text-slate-700">Model / Name</label>
-                <input type="text" name="model" placeholder="e.g. iPhone 13 Pro" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" required>
+             <div>
+                <label class="block text-sm font-semibold mb-2 text-slate-700">Service Type</label>
+                <select name="service_type" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" required>
+                    <option value="" disabled selected>Select Service Type</option>
+                    <option value="Walk-in">Walk-in Service</option>
+                    <option value="Home-based">Home-based Service</option>
+                    <option value="On-shop">On-shop Service</option>
+                </select>
             </div>
+           
         </div>
-
+         <div>
+            <label class="block text-sm font-semibold mb-2 text-slate-700">Model / Name</label>
+            <input type="text" name="model" placeholder="e.g. iPhone 13 Pro" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" required>
+        </div>
         <div>
             <label class="block text-sm font-semibold mb-2 text-slate-700">Detailed Issue Description</label>
             <textarea name="description" rows="5" placeholder="Please provide specific details about the issue..." class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white resize-none" required></textarea>

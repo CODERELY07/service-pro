@@ -1,6 +1,6 @@
 <?php
     require_once __DIR__ . '/../../config/functions.php'; 
-    include BASE_PATH . 'includes/forms/includes';
+    include BASE_PATH . 'includes/forms/includes.php';
 ?>
 
 <div class="bg-white p-8 rounded-2xl shadow-2xl w-full max-w-md border border-slate-100 mx-4">

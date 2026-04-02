@@ -1,3 +1,4 @@
+
 <?php 
     require_once  BASE_PATH . 'includes/auth.php';
 ?>
@@ -21,3 +22,5 @@
     ?>
 </head>
 <body class="bg-slate-50 text-slate-900">
+
+<?php  $page_scripts = [] ?>     

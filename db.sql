@@ -17,6 +17,7 @@ CREATE TABLE bookings (
     description TEXT,
     model VARCHAR(100),
     category VARCHAR(50),
+    service_type ENUM('Walk-in', 'Home-based', 'On-shop') NOT NULL DEFAULT 'On-shop',
     qr_code_path VARCHAR(255),
     status ENUM('Pending', 'In Progress', 'Ready', 'Claimed') DEFAULT 'Pending',
     total_price DECIMAL(10, 2) DEFAULT 0.00,

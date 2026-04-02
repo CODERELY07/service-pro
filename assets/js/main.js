@@ -1,4 +1,5 @@
 const projectPath = window.location.pathname.split('/').slice(0, -1).join('/')
+
 document.addEventListener('DOMContentLoaded', function() {
     const userMenuButton = document.getElementById('userMenuButton');
     const userDropdown = document.getElementById('userDropdown');

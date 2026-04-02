@@ -1,6 +1,7 @@
 <?php
-session_start();
-require_once '../config/db.php';
+    session_start();
+    require_once __DIR__ . '/../../config/functions.php';
+    require_once BASE_PATH . 'config/db.php';
 
 if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
     http_response_code(403);
@@ -14,9 +15,10 @@ try {
         SELECT b.*, u.username, u.email as user_email
         FROM bookings b
         JOIN users u ON b.user_id = u.id
-        WHERE b.status IN ('Pending', 'In Progress', 'Ready')
+        WHERE b.status IN ( 'Pending','In Progress','Ready' )
         ORDER BY b.created_at DESC
     ");
+   
     $stmt->execute();
     $activeBookings = $stmt->fetchAll(PDO::FETCH_ASSOC);
 

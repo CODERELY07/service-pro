@@ -4,8 +4,6 @@ require_once __DIR__ . '/config/functions.php';
 
 require_once BASE_PATH . 'config/db.php';
 
-
-
 function seedAdmin($pdo, $username = 'admin', $email = 'admin@servicepro.com', $password = 'admin123') {
     $stmt = $pdo->prepare('SELECT id FROM users WHERE email = ? OR username = ?');
     $stmt->execute([$email, $username]);
