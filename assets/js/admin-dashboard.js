@@ -38,9 +38,11 @@ export function renderAllBookingsTable(bookings) {
     tbody.innerHTML = bookings.map(booking => {
         const statusClasses = {
             'Pending': 'bg-yellow-100 text-yellow-800',
+            'Waiting Client Confirmation': 'bg-purple-100 text-purple-800',
             'In Progress': 'bg-blue-100 text-blue-800',
             'Ready': 'bg-green-100 text-green-800',
-            'Claimed': 'bg-purple-100 text-purple-800'
+            'Claimed': 'bg-emerald-100 text-emerald-800',
+            'Cancelled': 'bg-red-100 text-red-800'
         };
         const badgeClass = statusClasses[booking.status] || 'bg-gray-100 text-gray-800';
 
@@ -72,12 +74,15 @@ export function renderAllBookingsTable(bookings) {
 function updateStats(stats) {
     const total = document.getElementById('total-count');
     const pending = document.getElementById('pending-count');
+    const waitingConfirmation = document.getElementById('waiting-confirmation-count');
     const progress = document.getElementById('in-progress-count');
     const completed = document.getElementById('completed-count');
-
-
     if (total) total.textContent = stats.total;
     if (pending) pending.textContent = stats.pending;
+    if (waitingConfirmation) waitingConfirmation.textContent = stats.waiting_confirmation || 0;
+    if (progress) progress.textContent = stats.in_progress;
+    if (completed) completed.textContent = stats.completed;
+
     if (progress) progress.textContent = stats.in_progress;
     if (completed) completed.textContent = stats.completed;
 }
@@ -131,9 +136,11 @@ function displayBookingDetails(booking) {
 
     const statusColor = {
         'Pending': 'bg-yellow-100 text-yellow-800',
+        'Waiting Client Confirmation': 'bg-purple-100 text-purple-800',
         'In Progress': 'bg-blue-100 text-blue-800',
         'Ready': 'bg-green-100 text-green-800',
-        'Claimed': 'bg-purple-100 text-purple-800'
+        'Claimed': 'bg-emerald-100 text-emerald-800',
+        'Cancelled': 'bg-red-100 text-red-800'
     };
 
     contentDiv.innerHTML = `

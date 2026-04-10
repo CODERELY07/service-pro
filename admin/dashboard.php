@@ -22,7 +22,7 @@
             <p class="text-slate-500 mt-2">Manage all repair requests and scan QR codes for completion.</p>
         </div>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 mb-12">
         <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
             <p class="text-slate-500 text-sm font-medium">Total Bookings</p>
             <p class="text-3xl font-bold mt-1" id="total-count">0</p>
@@ -30,6 +30,10 @@
         <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
             <p class="text-slate-500 text-sm font-medium">Pending</p>
             <p class="text-3xl font-bold mt-1 text-yellow-600" id="pending-count">0</p>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
+            <p class="text-slate-500 text-sm font-medium">Awaiting Confirmation</p>
+            <p class="text-3xl font-bold mt-1 text-purple-600" id="waiting-confirmation-count">0</p>
         </div>
         <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
             <p class="text-slate-500 text-sm font-medium">In Progress</p>

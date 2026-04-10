@@ -109,6 +109,20 @@ async function openBookingDetails(id, isAdmin = false) {
                         <p class="text-slate-700 italic text-sm leading-relaxed">"${b.description}"</p>
                     </div>
 
+                    ${b.total_price && b.total_price > 0 ? `
+                    <div class="p-4 bg-green-50 rounded-2xl border border-green-100">
+                        <p class="text-[10px] text-green-600 font-bold uppercase tracking-widest mb-1">Service Price</p>
+                        <p class="text-green-700 font-bold text-lg">₱${parseFloat(b.total_price).toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
+                    </div>
+                    ` : ''}
+
+                    ${b.reject_reason ? `
+                    <div class="p-4 bg-red-50 rounded-2xl border border-red-100">
+                        <p class="text-[10px] text-red-600 font-bold uppercase tracking-widest mb-1">Reject Reason</p>
+                        <p class="text-red-700 text-sm leading-relaxed">${b.reject_reason}</p>
+                    </div>
+                    ` : ''}
+
                     <div class="flex flex-col items-center pt-4 border-t border-slate-100">
                         <p class="text-[10px] font-bold text-slate-400 uppercase mb-4">
                             ${isAdmin ? 'Database Reference QR' : 'Present this for Pickup'}
@@ -146,8 +160,8 @@ function renderAdminActions(b, footer) {
 
     if (b.status === 'Pending') {
         buttons = `
-            <button onclick="updateStatus(${b.id}, 'Cancelled')" class="${btnClass} text-red-600 hover:bg-red-50">Reject</button>
-            <button onclick="updateStatus(${b.id}, 'In Progress')" class="${btnClass} bg-blue-600 text-white hover:bg-blue-700">Accept Repair</button>
+            <button onclick="openRejectModal(${b.id})" class="${btnClass} text-red-600 hover:bg-red-50">Reject</button>
+            <button onclick="openAcceptModal(${b.id})" class="${btnClass} bg-blue-600 text-white hover:bg-blue-700">Accept & Quote</button>
         `;
     } else if (b.status === 'In Progress') {
         buttons = `
@@ -158,12 +172,17 @@ function renderAdminActions(b, footer) {
         buttons = `
             <button onclick="updateStatus(${b.id}, 'In Progress')" class="${btnClass} bg-orange-500 text-white hover:bg-orange-600">Back to Progress</button>
         `;
+    } else if (b.status === 'Waiting Client Confirmation') {
+        buttons = `
+            <button onclick="updateStatus(${b.id}, 'Pending')" class="${btnClass} text-slate-500 hover:bg-slate-100">Cancel Quote</button>
+        `;
     }
-    
+
     footer.innerHTML = buttons;
 }
 
-export function showNotification(message, type = 'info') {  
+export function showNotification(message, type = 'info') {
+    // Remove existing  s
     const existing = document.querySelectorAll('.notification');
     existing.forEach(n => n.remove());
 
@@ -174,27 +193,27 @@ export function showNotification(message, type = 'info') {
     const typeClasses = {
         success: 'bg-green-500/90 backdrop-blur-md text-white border-green-400',
         error: 'bg-red-500/90 backdrop-blur-md text-white border-red-400',
-        info: 'bg-slate-900/90 backdrop-blur-md text-white border-slate-700'
+        info: 'bg-slate-900/90 backdrop-blur-md text-white border-slate-700',
+        warning: 'bg-yellow-500/90 backdrop-blur-md text-white border-yellow-400'
     };
 
     notification.className = `${baseClasses} ${typeClasses[type] || typeClasses.info}`;
-
-    const icons = {
-        success: '✓',
-        error: '✕',
-        info: 'ℹ'
+    
+    const iconSvg = {
+        success: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>',
+        error: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>',
+        info: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>',
+        warning: '<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path></svg>'
     };
 
     notification.innerHTML = `
-        <span class="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded-full bg-white/20 text-sm font-bold">
-            ${icons[type] || icons.info}
-        </span>
-        <span class="font-bold tracking-tight text-sm">${message}</span>
+        ${iconSvg[type] || iconSvg.info}
+        <span class="font-medium">${message}</span>
     `;
 
     document.body.appendChild(notification);
-
-
+    
+    // Trigger animation
     setTimeout(() => notification.classList.remove('translate-x-[120%]'), 10);
 
     setTimeout(() => {
@@ -254,3 +273,220 @@ async function loadAdminAudit(id) {
 
 window.openBookingDetails = openBookingDetails;
 window.showNotification = showNotification;
+
+// Admin modal functions
+let currentBookingId = null;
+
+function openRejectModal(bookingId) {
+    currentBookingId = bookingId;
+    document.getElementById('rejectReason').value = '';
+    document.getElementById('rejectModal').classList.remove('hidden');
+}
+
+function openAcceptModal(bookingId) {
+    currentBookingId = bookingId;
+    document.getElementById('servicePrice').value = '';
+    document.getElementById('acceptModal').classList.remove('hidden');
+}
+
+async function confirmReject() {
+    const reason = document.getElementById('rejectReason').value.trim();
+    if (!reason) {
+        showNotification('Please enter a reject reason', 'error');
+        return;
+    }
+
+    try {
+        const response = await fetch('./../actions/admin/admin_update_booking.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                booking_id: currentBookingId,
+                status: 'Cancelled',
+                reject_reason: reason
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            showNotification('Booking rejected successfully', 'success');
+            closeModal('rejectModal');
+            closeModal('detailsModal');
+            // Refresh the page or reload bookings
+            if (typeof loadAllBookings === 'function') {
+                loadAllBookings();
+            } else {
+                location.reload();
+            }
+        } else {
+            showNotification(result.message, 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('An error occurred. Please try again.', 'error');
+    }
+}
+
+async function confirmAccept() {
+    const price = parseFloat(document.getElementById('servicePrice').value);
+    if (!price || price <= 0) {
+        showNotification('Please enter a valid service price', 'error');
+        return;
+    }
+
+    try {
+        const response = await fetch('./../actions/admin/admin_update_booking.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                booking_id: currentBookingId,
+                status: 'Waiting Client Confirmation',
+                total_price: price
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            showNotification('Quote sent to client successfully', 'success');
+            closeModal('acceptModal');
+            closeModal('detailsModal');
+            // Refresh the page or reload bookings
+            if (typeof loadAllBookings === 'function') {
+                loadAllBookings();
+            } else {
+                location.reload();
+            }
+        } else {
+            showNotification(result.message, 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('An error occurred. Please try again.', 'error');
+    }
+}
+
+// Client offer functions
+async function acceptOffer() {
+    const bookingId = window.currentBookingId || currentBookingId;
+    if (!bookingId) {
+        showNotification('Booking information not loaded. Please try again.', 'error');
+        return;
+    }
+
+    try {
+        const response = await fetch('/service-pro/actions/client_offer_response.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                booking_id: bookingId,
+                action: 'accept'
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            showNotification('Offer accepted successfully', 'success');
+            closeModal('offerModal');
+            location.reload();
+        } else {
+            showNotification(result.message, 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('An error occurred. Please try again.', 'error');
+    }
+}
+
+function rejectOffer() {
+    closeModal('offerModal');
+    document.getElementById('rejectOfferModal').classList.remove('hidden');
+    // Reset radio buttons
+    const radios = document.getElementsByName('rejectOfferReason');
+    radios.forEach(radio => radio.checked = false);
+    document.getElementById('otherReasonContainer').classList.add('hidden');
+    document.getElementById('otherRejectReason').value = '';
+}
+
+async function confirmRejectOffer() {
+    const bookingId = window.currentBookingId || currentBookingId;
+    if (!bookingId) {
+        showNotification('Booking information not loaded. Please try again.', 'error');
+        return;
+    }
+
+    const selectedReason = document.querySelector('input[name="rejectOfferReason"]:checked');
+    if (!selectedReason) {
+        showNotification('Please select a reason', 'error');
+        return;
+    }
+
+    let reason = selectedReason.value;
+    if (reason === 'other') {
+        const otherReason = document.getElementById('otherRejectReason').value.trim();
+        if (!otherReason) {
+            showNotification('Please specify the other reason', 'error');
+            return;
+        }
+        reason = otherReason;
+    } else if (reason === 'price') {
+        reason = 'Client rejected due to price';
+    }
+
+    try {
+        const response = await fetch('/service-pro/actions/client_offer_response.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                booking_id: bookingId,
+                action: 'reject',
+                reject_reason: reason
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            showNotification('Offer rejected successfully', 'success');
+            closeModal('rejectOfferModal');
+            location.reload();
+        } else {
+            showNotification(result.message, 'error');
+        }
+    } catch (error) {
+        console.error('Error:', error);
+        showNotification('An error occurred. Please try again.', 'error');
+    }
+}
+
+// Event listeners for radio buttons
+document.addEventListener('DOMContentLoaded', function() {
+    const radios = document.getElementsByName('rejectOfferReason');
+    radios.forEach(radio => {
+        radio.addEventListener('change', function() {
+            if (this.value === 'other') {
+                document.getElementById('otherReasonContainer').classList.remove('hidden');
+            } else {
+                document.getElementById('otherReasonContainer').classList.add('hidden');
+            }
+        });
+    });
+});
+
+window.openRejectModal = openRejectModal;
+window.openAcceptModal = openAcceptModal;
+window.confirmReject = confirmReject;
+window.confirmAccept = confirmAccept;
+window.acceptOffer = acceptOffer;
+window.rejectOffer = rejectOffer;
+window.confirmRejectOffer = confirmRejectOffer;

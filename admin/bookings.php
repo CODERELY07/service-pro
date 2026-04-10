@@ -5,7 +5,15 @@
     add_script('assets/js/admin-booking.js');
     add_script('assets/js/utils.js');
     add_script('assets/js/modal.js');
-        
+
+    require_once BASE_PATH . 'includes/header.php';
+    require_once BASE_PATH . 'includes/navbar.php';
+    
+    // Check authentication and admin role
+    if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
+        header("Location: " . BASE_URL . "index.php");
+        exit();
+    }
 
     $status_filter = $_GET['status'] ?? 'active';
 
@@ -13,15 +21,15 @@
     switch ($status_filter) {
         case 'completed':
             $page_title = "Completed Repairs";
-            $sql = "SELECT * FROM bookings WHERE status IN ('Ready', 'Claimed') ORDER BY created_at DESC";
+            $sql = "SELECT b.*, u.username FROM bookings b LEFT JOIN users u ON b.user_id = u.id WHERE b.status IN ('Ready', 'Claimed') ORDER BY b.created_at DESC";
             break;
         case 'cancelled':
             $page_title = "Cancelled Bookings";
-            $sql = "SELECT * FROM bookings WHERE status = 'Cancelled' ORDER BY created_at DESC";
+            $sql = "SELECT b.*, u.username FROM bookings b LEFT JOIN users u ON b.user_id = u.id WHERE b.status = 'Cancelled' ORDER BY b.created_at DESC";
             break;
         default: 
             $page_title = "Active Repairs";
-            $sql = "SELECT * FROM bookings WHERE status IN ('Pending', 'In Progress') ORDER BY created_at DESC";
+            $sql = "SELECT b.*, u.username FROM bookings b LEFT JOIN users u ON b.user_id = u.id WHERE b.status IN ('Pending', 'In Progress') ORDER BY b.created_at DESC";
             $status_filter = 'active';
             break;
     }
@@ -31,9 +39,8 @@
     $bookings = $stmt->fetchAll();
 
 
-    require_once BASE_PATH . 'includes/header.php';
-    require_once BASE_PATH . 'includes/navbar.php';
     require_once BASE_PATH . 'includes/modals/view_booking_modals.php';
+    require_once BASE_PATH . 'includes/modals/admin_actions.php';
 
     
 ?>
@@ -73,7 +80,7 @@
                 <?php else: foreach ($bookings as $row): ?>
                     <tr class="hover:bg-slate-50/50 transition">
                         <td class="px-6 py-4 font-mono text-sm font-bold text-blue-600">#<?= $row['tracking_id'] ?></td>
-                        <td class="px-6 py-4 text-sm text-slate-900">User ID: <?= $row['user_id'] ?></td>
+                        <td class="px-6 py-4 text-sm text-slate-900"><?= isset($row['username']) ? htmlspecialchars($row['username']) : 'Guest' ?></td>
                         <td class="px-6 py-4">
                             <div class="text-sm font-semibold text-slate-900"><?= $row['model'] ?></div>
                             <div class="text-xs text-slate-500"><?= $row['category'] ?></div>

@@ -36,6 +36,7 @@ try {
         SELECT 
             COUNT(*) as total,
             SUM(CASE WHEN status = 'Pending' THEN 1 ELSE 0 END) as pending,
+            SUM(CASE WHEN status = 'Waiting Client Confirmation' THEN 1 ELSE 0 END) as waiting_confirmation,
             SUM(CASE WHEN status = 'In Progress' THEN 1 ELSE 0 END) as in_progress,
             SUM(CASE WHEN status = 'Claimed' THEN 1 ELSE 0 END) as completed
         FROM bookings
@@ -48,6 +49,7 @@ try {
         'stats' => [
             'total' => (int)$stats['total'],
             'pending' => (int)$stats['pending'],
+            'waiting_confirmation' => (int)$stats['waiting_confirmation'],
             'in_progress' => (int)$stats['in_progress'],
             'completed' => (int)$stats['completed']
         ]

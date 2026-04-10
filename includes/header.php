@@ -12,6 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link href=<?= BASE_URL . 'assets/css/main.css'?>  rel="stylesheet">
     <script src=<?= BASE_URL . "assets/js/main.js"?> defer></script>
+    <?php if(isset($_SESSION['user_id'])): ?>
+    <script src=<?= BASE_URL . "assets/js/notifications.js"?> defer></script>
+    <?php endif; ?>
     <?php 
         if(isset($page_scripts) && is_array($page_scripts)):
           foreach($page_scripts as $script):    

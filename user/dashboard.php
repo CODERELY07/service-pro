@@ -23,6 +23,7 @@
         include BASE_PATH . 'includes/modals/booking.php'; 
         include BASE_PATH . 'includes/components/statusModal.php';
          require_once BASE_PATH . 'includes/modals/view_booking_modals.php';
+         require_once BASE_PATH . 'includes/modals/admin_actions.php';
     ?>
 
     <main class="container mx-auto px-6 py-12">
@@ -57,10 +58,14 @@
             <?php endif; ?>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm">
                 <p class="text-slate-500 text-sm font-medium">Pending Requests</p>
                 <p class="text-3xl font-bold mt-1" id="pending-count">0</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-purple-600">
+                <p class="text-slate-500 text-sm font-medium">Awaiting Confirmation</p>
+                <p class="text-3xl font-bold mt-1 text-slate-900" id="waiting-confirmation-count">0</p>
             </div>
             <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-blue-600">
                 <p class="text-slate-500 text-sm font-medium">In Progress</p>

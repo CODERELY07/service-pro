@@ -30,8 +30,7 @@
                 <select name="service_type" class="w-full px-5 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition bg-slate-50 focus:bg-white" required>
                     <option value="" disabled selected>Select Service Type</option>
                     <option value="Walk-in">Walk-in Service</option>
-                    <option value="Home-based">Home-based Service</option>
-                    <option value="On-shop">On-shop Service</option>
+                    <option value="On-site">On-site Service</option>
                 </select>
             </div>
            

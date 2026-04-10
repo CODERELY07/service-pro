@@ -1,1 +1,11 @@
-[02-Apr-2026 09:08:15 Europe/Berlin] Completion email sent to: calipjo.markely@gmail.com
+:\xampp\htdocs\service-pro\actions\admin\admin_update_booking.php(108): create_notification(54, 'Service Request...', 'Your service re...', 'error', 48)
+#1 {main}
+  thrown in C:\xampp\htdocs\service-pro\config\functions.php on line 15
+[07-Apr-2026 02:32:48 Europe/Berlin] Creating notification for user 54 about cancellation of booking 49 with reason: adadasd
+[09-Apr-2026 08:09:17 Europe/Berlin] Creating notification for user 56 about cancellation of booking 57 with reason: There's a problem I cant fix it necause when fixing I encounter a probelm
+[09-Apr-2026 08:22:56 Europe/Berlin] Completion email sent to: calipjo.markely@gmail.com
+[09-Apr-2026 08:31:53 Europe/Berlin] Completion email sent to: calipjo.markely@gmail.com
+[10-Apr-2026 07:29:56 Europe/Berlin] Creating notification for user 56 about cancellation of booking 59 with reason: I cant do this
+[10-Apr-2026 07:37:52 Europe/Berlin] Creating notification for user 56 about cancellation of booking 57 with reason: cancelt
+[10-Apr-2026 07:54:34 Europe/Berlin] Completion email sent to: calipjo.markely@gmail.com
+[10-Apr-2026 08:07:01 Europe/Berlin] Completion email sent to: calipjo.markely@gmail.com

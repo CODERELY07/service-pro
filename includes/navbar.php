@@ -5,6 +5,27 @@
         ?>
         <div class="flex items-center gap-6">
             <?php if(isset($_SESSION['user_id'])): ?>
+                <!-- Notifications -->
+                <div class="relative">
+                    <button id="notificationButton" class="relative text-slate-700 hover:text-slate-900 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM15 7v5H9v6H4V7h11z"></path>
+                        </svg>
+                        <span id="notificationBadge" class="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                    </button>
+
+                    <div id="notificationDropdown" class="absolute right-0 mt-2 w-80 bg-white rounded-lg shadow-lg border border-slate-200 py-2 z-50 hidden max-h-96 overflow-y-auto">
+                        <div class="px-4 py-2 border-b border-slate-200">
+                            <h3 class="text-sm font-semibold text-slate-900">Notifications</h3>
+                        </div>
+                        <div id="notificationList" class="divide-y divide-slate-100">
+                            <div class="px-4 py-3 text-center text-slate-500 text-sm">
+                                Loading notifications...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="relative">
                     <button id="userMenuButton" class="flex items-center gap-2 text-slate-700 hover:text-slate-900 focus:outline-none">
                         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,7 +45,12 @@
                             </svg>
                             Admin Dashboard
                         </a>
-
+                        <a href="<?= BASE_URL ?>admin/analytics.php" class="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-semibold">
+                            <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                            </svg>
+                            Analytics
+                        </a>
                         <div class="border-t border-slate-100 my-1"></div>
                         <div class="px-4 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Manage Bookings</div>
                         
